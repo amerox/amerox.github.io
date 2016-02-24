@@ -60,6 +60,7 @@
 		overflow: hidden;
 		width: 590px;
 		margin: 0 auto;
+		padding: 0 2px;
 	}
 
 	#g_nav li {
@@ -76,7 +77,7 @@
 		position: relative;
 	}
 
-	#g_nav li:first-child:after ,
+	#g_nav li:last-child:after ,
 	#g_nav span:before {
 		content: "";
 		width: 1px;
@@ -91,8 +92,8 @@
 		top: 0;
 		display: block;
 	}
-
-	#g_nav li:last-child:before ,
+	
+	#g_nav li:first-child:before ,
 	#g_nav span:after {
 		content: "";
 		width: 1px;
@@ -106,6 +107,16 @@
 		top: 0;
 		right: 0;
 		display: block;
+	}
+
+	#g_nav li:first-child:before {
+		right: inherit;
+		left: -1px;
+	}
+
+	#g_nav li:last-child:after {
+		left: inherit;
+		right: -1px;
 	}
 
 	#g_nav li a {
