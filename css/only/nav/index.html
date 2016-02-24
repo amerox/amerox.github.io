@@ -19,8 +19,8 @@
 	#main {
 		position: absolute;
 		top: 50%;
-		left: 50%;
-		transform: translate(-50%,-50%);
+		transform: translateY(-50%);
+		width: 100%;
 	}
 
 	footer {
@@ -35,6 +35,11 @@
 		border-top: 1px solid #77c0b7;
 		border-bottom: 1px solid #0a5b54;
 		position: relative;
+	}
+
+	#g_nav nav {
+		width: 100%;
+		background: #1a9d8f;
 	}
 
 	#g_nav:before {
@@ -53,6 +58,8 @@
 
 	#g_nav ul {
 		overflow: hidden;
+		width: 590px;
+		margin: 0 auto;
 	}
 
 	#g_nav li {
@@ -64,27 +71,37 @@
 		display: block;
 	}
 
-	#g_nav span:before {
-		content: "";
-		width: 1px;
-		height: 100%;
-		background: -moz-linear-gradient(top,rgba(0,119,117,0),#007775);
-		background: -webkit-gradient(linear, left top, left bottom, from(rgba(0,119,117,0)), to(#007775));
-		background: -o-linear-gradient(top, rgba(0,119,117,0), #007775);
-		background: linear-gradient(top, rgba(0,119,117,0), #007775);		position: absolute;
-		left: 0;
-		top: 0;
-		display: block;
+	#g_nav li:last-child ,
+	#g_nav li:first-child {
+		position: relative;
 	}
 
-	#g_nav span:after {
+	#g_nav li:first-child:after ,
+	#g_nav span:before {
 		content: "";
 		width: 1px;
 		height: 100%;
 		background: -moz-linear-gradient(top,rgba(0,119,117,0),#74bfb8);
 		background: -webkit-gradient(linear, left top, left bottom, from(rgba(0,119,117,0)), to(#74bfb8));
 		background: -o-linear-gradient(top, rgba(0,119,117,0), #74bfb8);
-		background: linear-gradient(top, rgba(0,119,117,0), #74bfb8);		display: inline-block;
+		background: linear-gradient(top, rgba(0,119,117,0), #74bfb8);
+		display: inline-block;
+		position: absolute;
+		left: 0;
+		top: 0;
+		display: block;
+	}
+
+	#g_nav li:last-child:before ,
+	#g_nav span:after {
+		content: "";
+		width: 1px;
+		height: 100%;
+		background: -moz-linear-gradient(top,rgba(0,119,117,0),#007775);
+		background: -webkit-gradient(linear, left top, left bottom, from(rgba(0,119,117,0)), to(#007775));
+		background: -o-linear-gradient(top, rgba(0,119,117,0), #007775);
+		background: linear-gradient(top, rgba(0,119,117,0), #007775);
+		display: inline-block;
 		position: absolute;
 		top: 0;
 		right: 0;
