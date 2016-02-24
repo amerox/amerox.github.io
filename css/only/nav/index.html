@@ -1,0 +1,138 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="Keywords" content="キーワード" />
+<meta name="Description" content="サイト概要" />
+<meta name="robots" content="INDEX,FOLLOW" />
+<title>CSSだけで表現するグローバルナビ</title>
+<link href="common/css/screen.css" rel="stylesheet" type="text/css" media="screen,print" />
+</head>
+<body>
+<style type="text/css">
+	/*ここからレイアウト*/
+	html {
+		background: #000;
+	}
+
+	#main {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%,-50%);
+	}
+
+	footer {
+		position: absolute;
+		bottom: 0;
+		left: 50%;
+		transform: translateX(-50%)
+	}
+	/* ここまでレイアウト */
+	/* ここから下記の設定 */
+	#g_nav {
+		border-top: 1px solid #77c0b7;
+		border-bottom: 1px solid #0a5b54;
+		position: relative;
+	}
+
+	#g_nav:before {
+		content: "";
+		border-top: 1px solid #0a5b54;
+		position: absolute;
+		top: -2px;
+		height: 1px;
+		width: 100%;
+	}
+
+	#g_nav a {
+		display: inline-block;
+		padding: 18px;
+	}
+
+	#g_nav ul {
+		overflow: hidden;
+	}
+
+	#g_nav li {
+		float: left;
+	}
+
+	#g_nav span {
+		position: relative;
+		display: block;
+	}
+
+	#g_nav span:before {
+		content: "";
+		width: 1px;
+		height: 100%;
+		background: -moz-linear-gradient(top,rgba(0,119,117,0),#007775);
+		background: -webkit-gradient(linear, left top, left bottom, from(rgba(0,119,117,0)), to(#007775));
+		background: -o-linear-gradient(top, rgba(0,119,117,0), #007775);
+		background: linear-gradient(top, rgba(0,119,117,0), #007775);		position: absolute;
+		left: 0;
+		top: 0;
+		display: block;
+	}
+
+	#g_nav span:after {
+		content: "";
+		width: 1px;
+		height: 100%;
+		background: -moz-linear-gradient(top,rgba(0,119,117,0),#74bfb8);
+		background: -webkit-gradient(linear, left top, left bottom, from(rgba(0,119,117,0)), to(#74bfb8));
+		background: -o-linear-gradient(top, rgba(0,119,117,0), #74bfb8);
+		background: linear-gradient(top, rgba(0,119,117,0), #74bfb8);		display: inline-block;
+		position: absolute;
+		top: 0;
+		right: 0;
+		display: block;
+	}
+
+	#g_nav li a {
+		color: #FFF;
+		font-size: 16px;
+		background: #1a9d8f;
+		text-decoration: none;
+	}
+
+	#g_nav li a:before {
+		content: ">";
+		transform: rotate(90deg);
+		display: inline-block;
+		margin: 0 5px 0 0;
+	}
+
+	#g_nav li a:link ,
+	#g_nav li a:visited {
+		transition: all 1s ease;
+		opacity: 1;
+	}
+
+	#g_nav li a:hover {
+		opacity: 0.4;
+	}
+	/* ここまで下記の設定 */
+</style>
+<div id="wrapper">
+	<div id="main">
+		<div id="g_nav">
+			<nav>
+				<ul>
+					<li><span><a href="#">nav01</a></span></li>
+					<li><span><a href="#">nav02</a></span></li>
+					<li><span><a href="#">nav03</a></span></li>
+					<li><span><a href="#">nav04</a></span></li>
+					<li><span><a href="#">nav05</a></span></li>
+					<li><span><a href="#">nav06</a></span></li>
+				</ul>
+			</nav>
+		</div>
+	</div>
+	<footer>
+		<p><small>Copyright &copy; amerox. All rights reserved.</small></p>
+	</footer>
+</div>
+</body>
+</html>
